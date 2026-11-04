@@ -1,0 +1,12 @@
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+pillow>=10.0
+weasyprint>=62
+fastapi>=0.104
+uvicorn>=0.24
+psycopg2-binary>=2.9
+python-dotenv>=1.0
+# tests
+pytest>=8
+httpx>=0.27

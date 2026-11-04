@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{site_name} &mdash; TezIntel Commercial Report - Traffic &amp; Arterial Flow</title>
+    <style>
+{css_content}
+    </style>
+</head>
+<body>
+    <!-- PAGE 1: Executive Overview, Two Cards & Ranked Corridors Table ONLY -->
+    {header_html}
+    {company_info_1}
+
+    <section class="traffic-section" id="traffic-counts">
+        <h2 class="section-title">Traffic &amp; Arterial Flow &mdash; Site Ingress Corridors</h2>
+        <p class="section-subtitle">Annual Average Daily Traffic (AADT) and multi-segment ingress routing into the proposed development</p>
+
+        <!-- Traffic Cards Row -->
+        <div class="traffic-cards-row">
+            {traffic_cards}
+        </div>
+
+        <!-- Top Ranked Regional Traffic Corridors Table -->
+        <div class="traffic-table-card">
+            <div class="traffic-table-heading">
+                <div class="traffic-table-title">Top Ranked Regional Traffic Corridors</div>
+                <div class="traffic-table-subtitle">Ranked by modeled site relevance, road hierarchy, measured traffic volume, and network accessibility</div>
+            </div>
+            <table class="traffic-counts-table">
+                <thead>
+                    <tr>
+                        <th style="width: 6%; text-align: center;">#</th>
+                        <th style="width: 38%;">Corridor Name &amp; Joined Segments</th>
+                        <th style="width: 14%; text-align: center;">Hierarchy Class</th>
+                        <th style="width: 13%; text-align: right;">Observed AADT</th>
+                        <th style="width: 10%; text-align: right;">Trip Share</th>
+                        <th style="width: 9%; text-align: right;">Relevance</th>
+                        <th style="width: 10%; text-align: center;">Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {table_rows_html}
+                </tbody>
+            </table>
+        </div>
+        {aadt_note}
+    </section>
+
+    <!-- PAGE 2: Regional Catchment Network Overview Map ONLY (Full Width & Max Height) -->
+    <div class="page-break"></div>
+    {header_html}
+    {company_info_2}
+
+    <section class="traffic-section">
+        <h2 class="section-title">Catchment Network &amp; Arterial Corridor Tracks</h2>
+        <p class="section-subtitle">Every corridor with measured traffic inside the {minutes}-minute drive-time polygon; the top corridors are highlighted</p>
+        {overview_map_block}
+    </section>
+
+    <!-- PAGE 2b: Site trip distribution map -->
+    <div class="page-break"></div>
+    {header_html}
+    {company_info_2b}
+
+    <section class="traffic-section">
+        <h2 class="section-title">Potential Site Trips by Approach Road</h2>
+        <p class="section-subtitle">Arrow width is proportional to vehicles per day entering the site from each approach (pass-by and diverted-link)</p>
+        {trip_map_block}
+    </section>
+
+    <!-- PAGE 2c: details -->
+    {details_page_html}
+
+    <!-- PAGE 3: Trip Generation & Pass-By Sensitivity Scenarios -->
+    <div class="page-break"></div>
+    {header_html}
+    {company_info_3}
+
+    <section class="traffic-section">
+        <h2 class="section-title">Trip Generation &amp; Commercial Operational Demand</h2>
+        <p class="section-subtitle">ITE Trip Generation (LU 945) and pass-by scenario sensitivity analysis</p>
+
+        <!-- Peak Commute Profile Strip -->
+        <div class="peak-profile-row" style="margin-bottom: 8px; clear: both; overflow: hidden;">
+            <div style="float: left; width: 47%; margin-right: 6%; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 6px 10px; box-sizing: border-box;">
+                <span style="font-weight: 700; color: #0F172A; font-size: 9.5px;">AM Commute Peak (06:00 - 10:00):</span>
+                <span style="color: #2563EB; font-weight: 700; font-size: 9.5px;"> {am_peak_vph} vph</span>
+                <div style="color: #64748B; font-size: 8.5px; margin-top: 1px;">{am_in_vph} In / {am_out_vph} Out &bull; Morning work commute surge</div>
+            </div>
+            <div style="float: left; width: 47%; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 6px 10px; box-sizing: border-box;">
+                <span style="font-weight: 700; color: #0F172A; font-size: 9.5px;">PM Commute Peak (15:00 - 19:00):</span>
+                <span style="color: #EA580C; font-weight: 700; font-size: 9.5px;"> {pm_peak_vph} vph</span>
+                <div style="color: #64748B; font-size: 8.5px; margin-top: 1px;">{pm_in_vph} In / {pm_out_vph} Out &bull; Evening homebound surge</div>
+            </div>
+        </div>
+
+        <!-- Trip Generation Table -->
+        <div class="traffic-table-card">
+            <div class="traffic-table-heading">
+                <div class="traffic-table-title">Trip Generation</div>
+                <div class="traffic-table-subtitle">Gross demand, pass-by reductions, and net primary vehicular trips (trip ends per weekday)</div>
+            </div>
+            <table class="traffic-counts-table">
+                <thead>
+                    <tr>
+                        <th style="width: 36%;">Land Use Component</th>
+                        <th style="width: 10%; text-align: center;">Intensity</th>
+                        <th style="width: 13%; text-align: right;">Gross Daily</th>
+                        <th style="width: 11%; text-align: center;">Pass-By</th>
+                        <th style="width: 14%; text-align: right;">Net Daily</th>
+                        <th style="width: 8%; text-align: right;">AM Peak</th>
+                        <th style="width: 8%; text-align: right;">PM Peak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {trip_gen_table_rows}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pass-By Scenario Sensitivity Analysis -->
+        {pass_by_scenarios_block}
+
+    </section>
+
+    <!-- PAGES 4+: Satellite Route Focus Maps (2 per page) -->
+    {satellite_pages_html}
+
+    <!-- Closing pages: candidates, method & notes -->
+    {closing_pages_html}
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.py[cod].*
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+output/
+
+# Python environment files
+.env
+.env.*
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
